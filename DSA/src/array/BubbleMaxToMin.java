@@ -11,9 +11,9 @@ public class BubbleMaxToMin {
 			{
 				if(arr[j]<arr[j+1])
 				{
-					int tem=arr[j];
+					int tempp=arr[j];
 					arr[j]=arr[j+1];
-					arr[j+1]=tem;
+					arr[j+1]=tempp;
 				}
 			}
 		}
