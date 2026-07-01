@@ -14,6 +14,8 @@ public class Number {
 			}
 			System.out.println();
 		}
+		System.out.println("------------------------------");
+		
 	}
 
 }
