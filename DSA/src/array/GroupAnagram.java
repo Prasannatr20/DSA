@@ -22,13 +22,15 @@ public class GroupAnagram {
 		
 		Map<String, List> map = new HashMap<>();
 		int[] arr = new int[26];
-		for(String s: strs)
+		for(String s:strs)
 		{
 			Arrays.fill(arr, 0);
-			for(char c: s.toCharArray()) arr[c-'a']++;
-			
-			StringBuilder sb = new StringBuilder("");
-			for(int i=0;i<26;i++)
+			for(char c:s.toCharArray())
+			{
+				arr[c-'a']++;
+			}
+			StringBuilder sb= new StringBuilder("");
+			for(int i=0;i<arr.length;i++)
 			{
 				sb.append("#");
 				sb.append(arr[i]);

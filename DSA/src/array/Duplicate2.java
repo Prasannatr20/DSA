@@ -8,10 +8,10 @@ public class Duplicate2 {
 	{
 		/*Leetcode - 219. Given an int array,
 		 * return true if two values are same and the 
-		 * difference between index of both the numbers(dulicates should be letss than or equal to k*/
+		 * difference between index of both the numbers(dulicates should be less than or equal to k*/
 		//bruteforce
 		int[] arr= {1,2,3,1};
-		int k=3;
+		int k=2;
 		System.out.println(Duplicate2.duplicate(arr, k));
 	}
 //	static boolean duplicate(int[] arr, int k)
@@ -28,12 +28,12 @@ public class Duplicate2 {
 	
 	static boolean duplicate(int[] arr, int k)
 	{
-		HashSet<Integer> set= new HashSet<>();
+		HashSet<Integer> set = new HashSet<>();
 		for(int i=0;i<arr.length;i++)
 		{
 			if(set.contains(arr[i])) return true;
 			set.add(arr[i]);
-			if(set.size()>k) set.remove(arr[i-k]);	
+			if(set.size()>k) set.remove(arr[i-k]);
 		}
 		return false;
 	}

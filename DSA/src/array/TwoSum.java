@@ -8,27 +8,21 @@ public class TwoSum {
 	public static void main(String[] args)
 	{
 		int[] arr= {2,3,21,34,76};
-		int[] result= TwoSum.twoSum(arr);
+		int tar= 55;
+		int[] result= TwoSum.twoSum(arr, tar);
 		for(int i:result)
 		{
 			System.out.println(i);
 		}
 	}
-	static int[] twoSum(int[] arr)
+	static int[] twoSum(int[] arr, int tar)
 	{
 		Map<Integer, Integer> map= new HashMap<>();
-		int target=55;
 		for(int i=0;i<arr.length;i++)
 		{
-				int n=target- arr[i];
-				if(!map.containsKey(n))
-				{
-					map.put(arr[i], i);
-				}
-				else
-				{
-					return new int[] {map.get(n), i};
-				}
+			int comp = tar-arr[i];
+			if(map.containsKey(comp)) return new int[] {map.get(comp),i};
+			else map.put(arr[i],i);
 		}
 		return null;
 	}
