@@ -49,7 +49,8 @@ public class ArrayListschool {
 				break;
 				case 9: clearAll();
 				break;
-				default: System.out.println("Entar a valid number");
+				case 0: return;
+				default: System.out.println("Enter a valid number");
 			}
 		}
 		return;
