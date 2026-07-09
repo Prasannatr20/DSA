@@ -5,11 +5,14 @@ public class Main {
 	public static void main(String[] args)
 	{
 		Ll list = new Ll();
-		list.addFirst(1);
-		list.addFirst(2);
-		list.addFirst(3);
-		list.addFirst(4);
-		list.addFirst(5);
+		for(int i=5;i>0;i--)
+		{
+			list.addFirst(i);
+		}
+		for(int i=6;i<11;i++)
+		{
+			list.addLast(i);
+		}
 		list.display();
 	}
 
