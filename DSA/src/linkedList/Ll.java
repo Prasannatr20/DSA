@@ -47,12 +47,32 @@ public class Ll
 	}
 	void deleteIndex(int index)
 	{
-		Node temp=head;
-		for(int i=0;i<index-2;i++)
+		if(index<0)
+		{
+			System.out.println("Enter a valid index");
+			return;
+		}
+		if(index==0)
+		{
+			head=head.next;
+			return;
+		}
+		Node temp= head;
+		for(int i=0;i<index-1;i++)
 		{
 			temp=temp.next;
 		}
 		temp.next=temp.next.next;
+	}
+	void deleteElement(int data)
+	{
+		Node temp=head;
+		if(temp.data==data)
+		{
+			temp.next=null;
+			return;
+		}
+		
 	}
 	void display()
 	{
