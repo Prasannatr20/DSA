@@ -45,7 +45,7 @@ public class Ll
 		newNode.next=temp.next;
 		temp.next=newNode;	
 	}
-	void delete(int index)
+	void deleteIndex(int index)
 	{
 		Node temp=head;
 		for(int i=0;i<index-2;i++)
