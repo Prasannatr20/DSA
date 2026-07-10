@@ -13,6 +13,7 @@ public class Main {
 		{
 			list.addLast(i);
 		}
+		list.add(10,11);
 		list.display();
 	}
 

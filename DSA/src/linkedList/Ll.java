@@ -24,6 +24,36 @@ public class Ll
 		}
 		temp.next=newNode;
 	}
+	void add(int index, int data)
+	{
+		if(index<0)
+		{
+			System.out.println("Enter a valid index");
+			return;
+		}
+		if(index==0)
+		{
+			addFirst(data);
+			return;
+		}
+		Node temp=head;
+		for(int i=0;i<index-1;i++)
+		{
+			temp=temp.next;
+		}
+		Node newNode= new Node(data);
+		newNode.next=temp.next;
+		temp.next=newNode;	
+	}
+	void delete(int index)
+	{
+		Node temp=head;
+		for(int i=0;i<index-2;i++)
+		{
+			temp=temp.next;
+		}
+		temp.next=temp.next.next;
+	}
 	void display()
 	{
 		Node temp=head;
