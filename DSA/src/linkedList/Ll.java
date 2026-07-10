@@ -66,13 +66,22 @@ public class Ll
 	}
 	void deleteElement(int data)
 	{
-		Node temp=head;
-		if(temp.data==data)
+		if(head.data==data)
 		{
-			temp.next=null;
+			head= head.next;
 			return;
 		}
-		
+		Node temp = head;
+		while(temp.next!=null && temp.next.data!= data)
+		{
+			temp=temp.next;
+		}
+		if(temp.next==null)
+		{
+			System.out.println("Enter a valid data");
+			return;
+		}
+		temp.next=temp.next.next;
 	}
 	void display()
 	{
