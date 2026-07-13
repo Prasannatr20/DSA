@@ -96,5 +96,4 @@ public class Ll
 			temp=temp.next;
 		}
 	}
-	
 }
