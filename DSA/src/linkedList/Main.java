@@ -13,7 +13,8 @@ public class Main {
 		{
 			list.addLast(i);
 		}
-		list.add(10,11);
+		list.add(8,11);
+		list.deleteIndex(8);
 		list.deleteElement(6);
 		list.display();
 	}
