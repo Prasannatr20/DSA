@@ -32,6 +32,11 @@ public class Ll
 			System.out.println("Enter a valid index");;
 			return;
 		}
+		if(index==0)
+		{
+			addFirst(data);
+			return;
+		}
 		int count=0;
 		Node temp= head;
 		try
@@ -45,6 +50,7 @@ public class Ll
 		catch(Exception e)
 		{
 			System.out.println("Enter a valid index");
+			return;
 		}
 		Node newNode= new Node(data);
 		newNode.next=temp.next;
@@ -87,13 +93,14 @@ public class Ll
 		}
 		temp.next=temp.next.next;
 	}
-	void display()
+	void display() 
 	{
 		Node temp=head;
 		while(temp!=null)
 		{
-			System.out.print(temp.data+" ");
+			System.out.print(temp.data+" -> ");
 			temp=temp.next;
 		}
+		System.out.println("null");
 	}
 }
