@@ -38,12 +38,12 @@ public class Ll
 		}
 		Node temp=head;
 		int count=0;
-		while(temp.next!=null && count<index-1)
+		while(temp!=null && count<index-1)
 		{
 			temp=temp.next;
 			count++;
 		}
-		if(temp.next==null)
+		if(temp==null)
 		{
 			System.out.println("Enter a valid index");
 			return;
@@ -54,7 +54,7 @@ public class Ll
 	}
 	void deleteIndex(int index)
 	{
-		if(index<0)
+		if(index<0|| head==null)
 		{
 			System.out.println("Enter a valid index");
 			return;
@@ -66,10 +66,15 @@ public class Ll
 		}
 		Node temp=head;
 		int count=0;
-		while(count<index-1)
+		while(temp.next!=null&& count<index-1)
 		{
 			temp=temp.next;
 			count++;
+		}
+		if(temp.next==null)
+		{
+			System.out.println("Enter a valid index");
+			return;
 		}
 		temp.next=temp.next.next;
 	}
@@ -114,23 +119,18 @@ public class Ll
 			System.out.println("Linked List is empty");
 			return;
 		}
-		if(data==head.data)
-		{
-			System.out.println("index -> "+1);
-			return;
-		}
 		Node temp=head;
 		int count=0;
-		while(temp!=null && temp.data!=data)
+		while(temp!=null)
 		{
+			if(temp.data==data)
+			{
+				System.out.println("Index ->"+ count);
+				return;
+			}
 			temp=temp.next;
 			count++;
 		}
-		if(temp==null)
-		{
-			System.out.println("Enter a valid element");
-			return;
-		}
-			System.out.println(count);
+		System.out.println("Element not found");
 	}
 }
