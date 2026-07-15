@@ -13,6 +13,7 @@ public class Main {
 		{
 			list.addLast(i);
 		}
+		list.reverse();
 		list.display();
 	}
 
