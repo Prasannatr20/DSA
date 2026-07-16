@@ -25,6 +25,7 @@ public class PlayListMain {
 		boolean action =true;
 		while(action)
 		{
+			System.out.println("Choose an option");
 			val=scan.nextInt();
 			if(val==0) action =false;
 			switch(val)
