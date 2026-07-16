@@ -33,13 +33,13 @@ public class PlayListMain {
 			case 1:
 				System.out.println("Enter song: ");
 				data= scan.next();
-				scan.next();
+				scan.nextLine();
 				songList.addFirst(data);
 				break;
 			case 2:
 				System.out.println("Enter song: ");
 				data= scan.next();
-				scan.next();
+				scan.nextLine();
 				songList.addLast(data);
 				break;
 			case 3:
@@ -58,13 +58,13 @@ public class PlayListMain {
 			case 5:
 				System.out.println("Enter song: ");
 				data=scan.next();
-				scan.next();
+				scan.nextLine();
 				songList.removeBasedOnName(data);
 				break;
 			case 6:
 				System.out.println("Enter song: ");
 				data= scan.next();
-				scan.next();
+				scan.nextLine();
 				songList.search(data);
 				break;
 			case 7:
