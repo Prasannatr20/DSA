@@ -9,15 +9,15 @@ public class PlayListMain {
 		PlayListCreation songList= new PlayListCreation();
 		Scanner scan= new Scanner(System.in);
 		System.out.println("Menu");
-		System.out.println("1 for Add song at beginning");
-		System.out.println("2 for Add song at end\n"
-				+ "3 for Insert song at a position\n"
-				+ "4 for Remove a song by index\n"
+		System.out.println("1 to add a song at beginning");
+		System.out.println("2 to add a song at end\n"
+				+ "3 to insert a song at a position\n"
+				+ "4 to remove a song by index\n"
 				+ "5 to Remove a song  by name\n"
-				+ "6 for Search song\n"
+				+ "6 to Search song\n"
 				+ "7 to reverse your PlayList\n"
 				+ "8 to Display playlist\n"
-				+ "9 for Count total songs\n"
+				+ "9 to Count total songs\n"
 				+ "0 to exit");
 		int val;
 		String data;
