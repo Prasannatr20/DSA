@@ -47,7 +47,7 @@ public class PlayListMain {
 				index=scan.nextInt();
 				System.out.println("Enter song: ");
 				data=scan.next();
-				scan.next();
+				scan.nextLine();
 				songList.insert(index, data);
 				break;
 			case 4:
