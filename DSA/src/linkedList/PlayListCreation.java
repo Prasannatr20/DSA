@@ -131,6 +131,7 @@ public class PlayListCreation
 			prev=curr;
 			curr=next;
 		}
+		head=prev;
 	}
 	void display()
 	{
