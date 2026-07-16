@@ -27,43 +27,41 @@ public class PlayListMain {
 		{
 			System.out.println("Choose an option");
 			val=scan.nextInt();
+			scan.nextLine();
 			switch(val)
 			{
 			case 1:
 				System.out.println("Enter song: ");
-				data= scan.next();
-				scan.nextLine();
+				data= scan.nextLine();
 				songList.addFirst(data);
 				break;
 			case 2:
 				System.out.println("Enter song: ");
-				data= scan.next();
-				scan.nextLine();
+				data= scan.nextLine();
 				songList.addLast(data);
 				break;
 			case 3:
 				System.out.println("Enter position: ");
 				index=scan.nextInt();
-				System.out.println("Enter song: ");
-				data=scan.next();
 				scan.nextLine();
+				System.out.println("Enter song: ");
+				data=scan.nextLine();
 				songList.insert(index, data);
 				break;
 			case 4:
 				System.out.println("Enter position: ");
 				index=scan.nextInt();
+				scan.nextLine();
 				songList.removeBasedOnIndex(index);
 				break;
 			case 5:
 				System.out.println("Enter song: ");
-				data=scan.next();
-				scan.nextLine();
+				data=scan.nextLine();
 				songList.removeBasedOnName(data);
 				break;
 			case 6:
 				System.out.println("Enter song: ");
-				data= scan.next();
-				scan.nextLine();
+				data= scan.nextLine();
 				songList.search(data);
 				break;
 			case 7:
@@ -77,6 +75,7 @@ public class PlayListMain {
 				break;
 			case 0:
 				action= false;
+				break;
 			default:
 				System.out.println("Choose a valid option");
 			}

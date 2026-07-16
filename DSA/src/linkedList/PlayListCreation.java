@@ -38,7 +38,7 @@ public class PlayListCreation
 		}
 		int count=0;
 		PlayList temp=head;
-		while(temp!=null && count==index-1)
+		while(temp!=null && count<index-1)
 		{
 			count++;
 			temp=temp.next;
@@ -59,6 +59,11 @@ public class PlayListCreation
 			System.out.println("Enter a valid index");
 			return;
 		}
+		if(head==null)
+		{
+			System.out.println("No songs to display");
+			return;
+		}
 		if(index==0)
 		{
 			head=head.next;
@@ -66,7 +71,7 @@ public class PlayListCreation
 		}
 		PlayList temp= head;
 		int count=0;
-		while(temp.next!=null && count==index-1)
+		while(temp.next!=null && count<index-1)
 		{
 			temp=temp.next;
 			count++;
@@ -81,9 +86,19 @@ public class PlayListCreation
 	void removeBasedOnName(String data)
 	{
 		PlayList temp= head;
+		if(temp==null)
+		{
+			System.out.println("No songs to remove");
+			return;
+		}
+		if(temp.data.equals(data))
+		{
+			head=head.next;
+			return;
+		}
 		while(temp.next!=null && !temp.next.data.equals(data))
 		{
-			temp= temp.next;
+			temp=temp.next;
 		}
 		if(temp.next==null)
 		{
@@ -115,13 +130,12 @@ public class PlayListCreation
 	}
 	void reverse()
 	{
-		
 		PlayList next=null;
 		PlayList curr=head;
 		PlayList prev=null;
 		if(curr==null)
 		{
-			System.out.println(head.data);
+			System.out.println("No songs in playlist");
 			return;
 		}
 		while(curr!=null)
@@ -141,7 +155,7 @@ public class PlayListCreation
 			System.out.print(temp.data+ "->");
 			temp=temp.next;
 		}
-		System.out.println(" ");
+		System.out.println("No songs in playlist");
 	}
 	void size()
 	{
