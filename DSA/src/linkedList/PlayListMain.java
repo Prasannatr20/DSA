@@ -27,7 +27,6 @@ public class PlayListMain {
 		{
 			System.out.println("Choose an option");
 			val=scan.nextInt();
-			if(val==0) action =false;
 			switch(val)
 			{
 			case 1:
@@ -76,6 +75,8 @@ public class PlayListMain {
 			case 9:
 				songList.size();
 				break;
+			case 0:
+				action= false;
 			default:
 				System.out.println("Choose a valid option");
 			}
