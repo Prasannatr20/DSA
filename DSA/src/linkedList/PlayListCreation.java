@@ -138,9 +138,10 @@ public class PlayListCreation
 		PlayList temp=head;
 		while(temp!=null)
 		{
-			System.out.println(temp.data+ "->");
+			System.out.print(temp.data+ "->");
 			temp=temp.next;
 		}
+		System.out.println(" ");
 	}
 	void size()
 	{
