@@ -3,6 +3,7 @@ package doublyLinkeList;
 public class DoublyLinkedList
 {
 	Node head=null;
+	int size=0;
 	void addFirst(int data)
 	{
 		Node newNode = new Node(data);
@@ -33,7 +34,8 @@ public class DoublyLinkedList
 	}
 	void insertIndex(int index, int data)
 	{
-		if(index<0)
+		int currentSize= size();
+		if(index<0|| index>currentSize)
 		{
 			System.out.println("Enter a valid index");
 			return;
@@ -46,14 +48,15 @@ public class DoublyLinkedList
 		Node newNode = new Node(data);
 		Node temp=head;
 		int count=0;
-		while(temp.next!=null && count<index)
+		while(temp.next!=null && count<index-1)
 		{
 			count++;
 			temp=temp.next;
 		}
 		if(temp.next==null)
 		{
-			System.out.println("Enter a valid index");
+			temp.next=newNode;
+			newNode.prev=temp;
 			return;
 		}
 		newNode.prev=temp;
@@ -71,12 +74,16 @@ public class DoublyLinkedList
 		if(head.data==data)
 		{
 			head=head.next;
+			head.prev=null;
 			return;
 		}
 		Node temp=head;
+		
 		while(temp.next!=null && data!=temp.next.data)
 		{
+			
 			temp=temp.next;
+			
 		}
 		if(temp.next==null)
 		{
@@ -86,6 +93,7 @@ public class DoublyLinkedList
 		temp.next=temp.next.next;
 		temp.next.next.prev=temp;		
 	}
+	
 	void display()
 	{
 		Node temp=head;
@@ -95,5 +103,16 @@ public class DoublyLinkedList
 			temp=temp.next;
 		}
 		System.out.print("null");
+	}
+	int size()
+	{
+		size=0;
+		Node temp=head;
+		while(temp!=null)
+		{
+			size++;
+			temp=temp.next;
+		}
+		return size;
 	}
 }
