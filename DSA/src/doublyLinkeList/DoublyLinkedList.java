@@ -61,6 +61,31 @@ public class DoublyLinkedList
 		temp.next.prev=newNode;
 		temp.next=newNode;
 	}
+	void delete(int data)
+	{
+		if(head==null)
+		{
+			System.out.println("No values to delete");
+			return;
+		}
+		if(head.data==data)
+		{
+			head=head.next;
+			return;
+		}
+		Node temp=head;
+		while(temp.next!=null && data!=temp.next.data)
+		{
+			temp=temp.next;
+		}
+		if(temp.next==null)
+		{
+			System.out.println("Entered value is not present in list");
+			return;
+		}
+		temp.next=temp.next.next;
+		temp.next.next.prev=temp;		
+	}
 	void display()
 	{
 		Node temp=head;

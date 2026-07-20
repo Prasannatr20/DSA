@@ -16,6 +16,7 @@ public class Main {
 		list.addLast(9);
 		list.addLast(10);
  		list.insertIndex(3, 30);
+ 		list.delete(30);
 		list.display();
 	}
 
