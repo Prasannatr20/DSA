@@ -38,7 +38,7 @@ public class DoublyLinkedList
 			System.out.println("Enter a valid index");
 			return;
 		}
-		if(index==0)
+		if(index==0|| head ==null)
 		{
 			addFirst(data);
 			return;
@@ -57,9 +57,9 @@ public class DoublyLinkedList
 			return;
 		}
 		newNode.prev=temp;
+		newNode.next=temp.next;
+		temp.next.prev=newNode;
 		temp.next=newNode;
-		newNode.next=temp.next.next;
-		temp.next.prev=temp.next;
 	}
 	void display()
 	{
