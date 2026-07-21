@@ -16,7 +16,8 @@ public class Main {
 		list.addLast(9);
 		list.addLast(10);
 		list.insert(5, 50);
-// 		System.out.println(list.size());
+		list.deleteIndex(5);
+ 		System.out.println(list.size());
 		list.display();
 	}
 
