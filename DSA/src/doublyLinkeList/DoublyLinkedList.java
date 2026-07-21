@@ -41,7 +41,7 @@ public class DoublyLinkedList
 			addFirst(data);
 			return;
 		}
-		if(index>size)
+		if(index>size())
 		{
 			System.out.println("Enter a valid data");
 			return;
@@ -80,6 +80,23 @@ public class DoublyLinkedList
 		head.prev=null;
 		temp.next=null;
 	}
+	void deleteLast()
+	{
+		if(head==null)
+		{
+			System.out.println("No nodes to delete");
+			return;
+		}
+		if(head==tail)
+		{
+			head=tail=null;
+			return;
+		}
+		Node temp=tail;
+		tail=tail.prev;
+		temp.prev=null;
+		tail.next=null;
+	}
 	void deleteIndex(int index)
 	{
 		if(head==null)
@@ -99,13 +116,25 @@ public class DoublyLinkedList
 		}
 		int count=0;
 		Node temp=head;
-		while(temp.next!=null && index<count-1)
+		while(temp!=null && count!=index)
 		{
 			count++;
 			temp=temp.next;
 		}
-		temp.next=temp.next.next;
-		temp.next.next.prev=temp;
+		if(index>size())
+		{
+			System.out.println("Enter a valid index");
+			return;
+		}
+		if(temp==null)
+		{
+			deleteLast();
+			return;
+		}
+		temp.prev.next=temp.next;
+		temp.next.prev=temp.prev;
+		temp.prev=null;
+		temp.next=null;
 	}
 	void display()
 	{
