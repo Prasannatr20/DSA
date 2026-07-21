@@ -29,6 +29,41 @@ public class DoublyLinkedList
 		tail.next=newNode;
 		tail=newNode;
 	}
+	void insert(int index, int data)
+	{
+		if(index<0)
+		{
+			System.out.println("Enter a valid index");
+			return;
+		}
+		if(head==null || index==0)
+		{
+			addFirst(data);
+			return;
+		}
+		if(index>size())
+		{
+			System.out.println("Enter a valid data");
+			return;
+		}
+		Node newNode = new Node(data);
+		Node temp=head;
+		int count=0;
+		while(temp.next!=null && count<index-1)
+		{
+			temp=temp.next;
+			count++;
+		}
+		if(temp.next==null)
+		{
+			addLast(data);
+			return;
+		}
+		newNode.prev=temp;
+		newNode.next=temp.next;
+		temp.next=temp.next.prev=newNode;
+	}
+	
 	void display()
 	{
 		Node temp=head;
@@ -38,5 +73,16 @@ public class DoublyLinkedList
 			temp=temp.next;
 		}
 		System.out.println("null");
+	}
+	int size()
+	{
+		int count=0;
+		Node temp=head;
+		while(temp!=null)
+		{
+			count++;
+			temp=temp.next;
+		}
+		return count;
 	}
 }
