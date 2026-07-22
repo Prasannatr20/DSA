@@ -4,30 +4,38 @@ public class DoublyLinkedList
 {
 	Node head=null;
 	Node tail=null;
-	int size=size();
+	int size=0;
+	int size()
+	{
+		return this.size;
+	}
 	void addFirst(int data)
 	{
 		Node newNode = new Node(data);
 		if(head==null)
 		{
 			head=tail=newNode;
+			size++;
 			return;
 		}
 		newNode.next=head;
 		head.prev=newNode;
 		head=newNode;
+		size++;
 	}
 	void addLast(int data)
 	{
 		if(tail==null)
 		{
 			addFirst(data);
+			size++;
 			return;
 		}
 		Node newNode= new Node(data);
 		newNode.prev=tail;
 		tail.next=newNode;
 		tail=newNode;
+		size++;
 	}
 	void insert(int index, int data)
 	{
@@ -47,6 +55,7 @@ public class DoublyLinkedList
 			return;
 		}
 		Node newNode = new Node(data);
+		size++;
 		Node temp=head;
 		int count=0;
 		while(temp.next!=null && count<index-1)
@@ -73,12 +82,14 @@ public class DoublyLinkedList
 		if(head==tail)
 		{
 			head=tail=null;
+			size--;
 			return;
 		}
 		Node temp=head;
 		head=head.next;
 		head.prev=null;
 		temp.next=null;
+		size--;
 	}
 	void deleteLast()
 	{
@@ -90,23 +101,32 @@ public class DoublyLinkedList
 		if(head==tail)
 		{
 			head=tail=null;
+			size--;
 			return;
 		}
 		Node temp=tail;
 		tail=tail.prev;
 		temp.prev=null;
 		tail.next=null;
+		size--;
 	}
 	void deleteIndex(int index)
 	{
+		if(index<0 || index>=size())
+		{
+			System.out.println("Enter a valid index");
+			return;
+		}
 		if(head==null)
 		{
 			System.out.println("No data to delete");
+			size--;
 			return;
 		}
 		if(head==tail)
 		{
 			head=tail=null;
+			size--;
 			return;
 		}
 		if(index==0)
@@ -121,12 +141,7 @@ public class DoublyLinkedList
 			count++;
 			temp=temp.next;
 		}
-		if(index>size())
-		{
-			System.out.println("Enter a valid index");
-			return;
-		}
-		if(temp==null)
+		if(temp==tail)
 		{
 			deleteLast();
 			return;
@@ -135,6 +150,7 @@ public class DoublyLinkedList
 		temp.next.prev=temp.prev;
 		temp.prev=null;
 		temp.next=null;
+		size--;
 	}
 	void display()
 	{
@@ -145,16 +161,5 @@ public class DoublyLinkedList
 			temp=temp.next;
 		}
 		System.out.println("null");
-	}
-	int size()
-	{
-		int count=0;
-		Node temp=head;
-		while(temp!=null)
-		{
-			count++;
-			temp=temp.next;
-		}
-		return count;
 	}
 }
