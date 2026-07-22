@@ -20,6 +20,7 @@ public class Main {
 		list.insert(6, 60);
  		System.out.println(list.size);
 		list.display();
+		list.reverse();
 	}
 
 }

@@ -162,4 +162,14 @@ public class DoublyLinkedList
 		}
 		System.out.println("null");
 	}
+	void reverse()
+	{
+		Node temp=tail;
+		System.out.print("null");
+		while(temp!=null)
+		{
+			System.out.print(" <-"+ temp.data);
+			temp=temp.prev;
+		}
+	}
 }
