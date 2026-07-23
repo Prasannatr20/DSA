@@ -4,9 +4,6 @@ public class PlayList_DLL
 {
 	Song head=null;
 	Song tail=null;
-	Song next=null;
-	Song prev=null;
-	
 	int size=0;
 	
 	void addFirst(String data)
@@ -18,7 +15,7 @@ public class PlayList_DLL
 			head=tail=newSong;
 			return;
 		}
-		newSong.next=head.prev;
+		newSong.next=head;
 		head.prev=newSong;
 		head=newSong;
 	}
@@ -26,7 +23,7 @@ public class PlayList_DLL
 	{
 		if(head==null)
 		{
-			head=tail=null;
+			addFirst(data);
 			return;
 		}
 		Song newSong= new Song(data);
@@ -37,7 +34,7 @@ public class PlayList_DLL
 	}
 	void insert(int index, String data)
 	{
-		if(index<0)
+		if(index<0|| index>size)
 		{
 			System.out.println("Enter a valid index");
 			return;
@@ -63,6 +60,7 @@ public class PlayList_DLL
 		size++;
 		newSong.prev=temp;
 		newSong.next=temp.next;
+		temp.next.prev=newSong;
 		temp.next=newSong;
 	}
 	void deleteFirst()
@@ -103,7 +101,7 @@ public class PlayList_DLL
 		temp.prev=null;
 		size--;
 	}
-	void delete(int index, String data)
+	void delete(int index)
 	{
 		if(index>=size)
 		{
@@ -122,7 +120,7 @@ public class PlayList_DLL
 			temp=temp.next;
 			count++;
 		}
-		if(temp==null)
+		if(temp==tail)
 		{
 			deleteLast();
 			return;
@@ -152,5 +150,21 @@ public class PlayList_DLL
 			temp=temp.prev;
 		}
 		System.out.println("null");
+	}
+	void search(String data)
+	{
+		Song temp=head;
+		int count=0;
+		while(temp!=null)
+		{
+			count++;
+			if(temp.data.contains(data))
+			{
+				System.out.println(count);
+				return;
+			}
+			temp=temp.next;
+		}
+		System.out.println("There is no song that you searched for");
 	}
 }
