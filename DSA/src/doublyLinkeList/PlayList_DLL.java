@@ -1,9 +1,12 @@
-package linkedList;
+package doublyLinkeList;
 
 public class PlayList_DLL
 {
 	Song head=null;
 	Song tail=null;
+	Song next=null;
+	Song prev=null;
+	
 	int size=0;
 	
 	void addFirst(String data)
@@ -128,5 +131,26 @@ public class PlayList_DLL
 		temp.next.prev=temp.prev;
 		temp.next=null;
 		temp.prev=null;
+		size--;
+	}
+	void display()
+	{
+		Song temp= head;
+		while(temp!=null)
+		{
+			System.out.print(temp.data+" ->");
+			temp=temp.next;
+		}
+		 System.out.println("null");
+	}
+	void reversePlaylist()
+	{
+		Song temp=tail;
+		while(temp!=null)
+		{
+			System.out.print(temp.data+" ->");
+			temp=temp.prev;
+		}
+		System.out.println("null");
 	}
 }
