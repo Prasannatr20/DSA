@@ -10,6 +10,7 @@ public class Palindrome {
 	}
 	static int reverse(int num)
 	{
+		if (num<0) return 0;
 		int rev=0;
 		while(num!=0)
 		{
