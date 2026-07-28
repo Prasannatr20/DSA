@@ -6,17 +6,27 @@ public class GCD {
 	{
 		System.out.println(gcd(18,36));
 	}
-	//Brute force
+//	static int gcd(int n, int m)
+//	{
+//		int gcd=0;
+//		for(int i=1;i<=n && i<=m;i++)
+//		{
+//			if(n%i==0 && m%i==0)
+//			{
+//				gcd=i;
+//			}
+//		}
+//		return gcd;
+//	}
 	static int gcd(int n, int m)
 	{
-		int gcd=0;
-		for(int i=1;i<=n && i<=m;i++)
+		if(n==m) return n;
+		while(n>0 && m>0)
 		{
-			if(n%i==0 && m%i==0)
-			{
-				gcd=i;
-			}
+			if(n>m) n=n%m;
+			else m=m%n;
 		}
-		return gcd;
+		if(n==0) return m;
+		return n;
 	}
 }
