@@ -8,7 +8,7 @@ public class OneToN {
 	}
 	static void numbers(int n)
 	{
-	  	if(n==0) return;
+		if(n==0) return;
 		numbers(n-1);
 		System.out.println(n);
 	}
