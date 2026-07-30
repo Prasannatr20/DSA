@@ -2,7 +2,7 @@ package recursionn;
 
 public class StackHeight {
 
-	//Height of stack in x^n. Stack height is always n
+	//Height of stack in x^n. Stack height = n
 	public static void main(String[] args)
 	{
 		System.out.println(height(3, 8));
