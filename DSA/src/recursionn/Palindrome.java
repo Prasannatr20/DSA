@@ -4,23 +4,20 @@ public class Palindrome {
 
 	public static void main(String[] args)
 	{
-		String str="Malayalam";
-		String str2=str.toLowerCase() ;
+		String str="A man, a plan, a canal: Panama";
 		char[] arr=str.toLowerCase().toCharArray();
 		
-		palindrome(arr, 0, arr.length-1);
-		
-		str=new String(arr);
-		
-		if(str.equals(str2)) System.out.println("True");
-		else System.out.println("False");
+		boolean bool= palindrome(arr, 0, arr.length-1);
+		System.out.println(bool);
 	}
-	static void palindrome(char[] arr, int start, int end)
+	static boolean palindrome(char[] arr, int start, int end)
 	{
-		if(start>=end) return;
-		char c=arr[start];
-		arr[start]=arr[end];
-		arr[end]=c;
-		palindrome(arr, start+1, end-1);
+		if(start>=end) return true;
+		if(!Character.isLetterOrDigit(arr[start]))
+			return palindrome(arr, start+1, end);
+		if(!Character.isLetterOrDigit(arr[end]))
+			return palindrome(arr, start, end-1);
+		if(arr[start]!=arr[end]) return false;
+		return palindrome(arr, start+1, end-1);
 	}
 }
