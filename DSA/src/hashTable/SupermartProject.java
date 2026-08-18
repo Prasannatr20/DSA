@@ -79,7 +79,7 @@ public class SupermartProject
 	}
 	static void present(String fruit)
 	{
-		if(t.contains(fruit))
+		if(t.containsKey(fruit))
 		{
 			System.out.println(fruit +" "+ "is available  Qty is: "+ t.get(fruit));
 		}
