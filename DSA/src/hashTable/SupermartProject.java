@@ -58,7 +58,7 @@ public class SupermartProject
 	}
 	static void remove(String fruit)
 	{
-		if(t.contains(fruit))
+		if(t.containsKey(fruit))
 		{
 			t.remove(fruit);
 		}
